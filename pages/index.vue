@@ -1,73 +1,49 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        covid19
-      </h1>
-      <h2 class="subtitle">
-        A tracker for COVID19 in Venezuela
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <div class="app flex flex-col min-h-screen p-8">
+    <section class="grid grid-cols-2 grid-rows-1 bg-white p-8 rounded-md">
+      <div>
+        <h1 class="text-xl font-bold mb-8">Casos confirmados por estado</h1>
+        <ul>
+          <li v-for="cases in casesByState" :key="cases">
+            <span class="count inline-block text-center">{{ cases[1] }}</span>
+            <span class="inline-block">{{ cases[0] }}</span>
+          </li>
+        </ul>
       </div>
-    </div>
+      <div></div>
+    </section>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
 export default {
-  components: {
-    Logo
+  data() {
+    return {
+      casesByState: []
+    }
+  },
+  computed: {
+    data() {
+      return this.$store.state.appController.data
+    }
+  },
+  created() {
+    this.casesByState = Object.entries(this.data.Confirmed.ByState).sort(
+      (a, b) => b[1] - a[1]
+    )
   }
 }
 </script>
 
 <style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+ul {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  line-height: 1.75;
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.count {
+  width: 33px;
 }
 </style>
