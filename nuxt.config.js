@@ -27,7 +27,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['@plugins/vue-font-awesome'],
   /*
    ** Nuxt.js dev-modules
    */

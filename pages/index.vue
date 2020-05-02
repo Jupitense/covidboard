@@ -1,7 +1,7 @@
 <template>
   <div class="app flex flex-col min-h-screen p-8">
     <section
-      class="grid grid-cols-2 grid-rows-1 bg-white p-8 rounded-lg shadow-md"
+      class="grid grid-cols-2 grid-rows-1 bg-gray-900 p-8 rounded-lg shadow-md"
     >
       <div>
         <h1 class="text-xl font-bold mb-8">Casos confirmados por estado</h1>
