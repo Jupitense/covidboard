@@ -42,12 +42,21 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
+  proxy: {
+    '/api': {
+      target: 'https://covid19.patria.org.ve/api/v1/summary',
+      pathRewrite: {
+        '^/api': '/'
+      }
+    }
+  },
   axios: {},
   /*
    ** Build configuration
@@ -56,6 +65,17 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {
+      config.module.rules.push(
+        {
+          test: /\.(json|geojson)$/,
+          loader: 'json-loader'
+        },
+        {
+          test: /\.svg$/,
+          loader: 'svg-inline-loader'
+        }
+      )
+    }
   }
 }
