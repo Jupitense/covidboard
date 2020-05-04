@@ -65,6 +65,12 @@ export default {
             data: [],
             fill: false,
             borderColor: '#D7263D'
+          },
+          {
+            label: 'Activos',
+            data: [],
+            fill: false,
+            borderColor: 'orange'
           }
         ]
       },
@@ -126,6 +132,12 @@ export default {
       return {
         x: cases.Date,
         y: cases.Deaths.Count
+      }
+    })
+    this.timelineData.datasets[3].data = this.timeline.map((cases) => {
+      return {
+        x: cases.Date,
+        y: cases.Active.Count
       }
     })
   }
