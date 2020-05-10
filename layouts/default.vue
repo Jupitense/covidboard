@@ -6,18 +6,32 @@
     </div>
     <div v-else class="dashboard grid">
       <aside class="bg-gray-900">
-        <h1 class="text-white text-2xl font-black text-center p-6 pb-0">
-          COVIDBoard<sub class="text-xs font-normal">BETA</sub>
+        <h1
+          class="hidden lg:block text-white lg:text-lg font-black text-center p-6 pb-0"
+        >
+          COVIDBoard
+        </h1>
+        <h1
+          class="lg:hidden text-white text-2xl font-black text-center p-6 pb-0"
+        >
+          CB
         </h1>
         <ul class="flex flex-col mt-12">
-          <li
+          <a
             v-for="option in menu"
             :key="option"
-            class="w-full cursor-pointer pt-4 pb-4 pl-6 pr-6 hover:bg-green-700"
+            :href="option.url"
+            :target="option.target"
           >
-            <font-awesome-icon :icon="option.icon" class="mr-4" />
-            {{ option.label }}
-          </li>
+            <li
+              class="flex flex-col items-center lg:block w-full cursor-pointer pt-4 pb-4 pl-6 pr-6 hover:bg-green-700"
+            >
+              <font-awesome-icon :icon="option.icon" class="lg:mr-4" />
+              <span class="invisible md:visible lg:text-sm xl:text-base">
+                {{ option.label }}
+              </span>
+            </li>
+          </a>
         </ul>
       </aside>
       <nuxt />
@@ -37,11 +51,22 @@ export default {
       menu: [
         {
           label: 'Resumen',
-          icon: 'virus'
+          icon: 'virus',
+          url: '/',
+          target: ''
         },
         {
           label: 'Noticias',
-          icon: 'newspaper'
+          icon: 'newspaper',
+          url: '#',
+          target: ''
+        },
+        {
+          label: 'Global',
+          icon: 'globe',
+          url:
+            'https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6',
+          target: 'blank'
         }
       ]
     }
@@ -92,7 +117,13 @@ html {
 }
 
 .dashboard {
-  grid-template-columns: 15% auto;
+  grid-template-columns: 20% auto;
+}
+
+@media screen and (min-width: 640px) {
+  .dashboard {
+    grid-template-columns: 15% auto;
+  }
 }
 
 aside {
