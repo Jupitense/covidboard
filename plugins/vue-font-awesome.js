@@ -6,7 +6,8 @@ import {
   faViruses,
   faHeadSideCough,
   faSkullCrossbones,
-  faHeartbeat
+  faHeartbeat,
+  faGlobe
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
@@ -16,7 +17,8 @@ library.add(
   faViruses,
   faHeadSideCough,
   faSkullCrossbones,
-  faHeartbeat
+  faHeartbeat,
+  faGlobe
 )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)

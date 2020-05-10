@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-sm rounded overflow-hidden" :class="type">
+  <div class="max-w-sm rounded overflow-hidden w-full" :class="type">
     <div class="px-6 py-4">
       <div class="font-bold text-xl mb-2">{{ title }}</div>
       <div class="flex items-center justify-between">

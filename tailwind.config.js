@@ -10,12 +10,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        white: '#FAFFFD',
+        white: '#fafffd',
         background: '#121724',
-        confirmed: 'linear-gradient(to right, #1fa2ff, #12d8fa, #a6ffcb)',
-        recovered: '#48E5C2',
-        death: '#D7263D',
-        active: '#FA824C'
+        confirmed: '#0072ff',
+        recovered: '#11998e',
+        death: '#ed213a',
+        active: '#f5af19'
       }
     }
   },
