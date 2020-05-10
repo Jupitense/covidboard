@@ -49,9 +49,6 @@ export default {
   computed: {
     isLoading() {
       return this.$store.state.appController.isLoading
-    },
-    data() {
-      return this.$store.state.appController.data
     }
   },
   async beforeCreate() {

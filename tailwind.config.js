@@ -12,9 +12,9 @@ module.exports = {
       colors: {
         white: '#FAFFFD',
         background: '#121724',
-        confirmed: '#3C91E6',
-        recovered: '#A2D729',
-        death: '#ee6055',
+        confirmed: 'linear-gradient(to right, #1fa2ff, #12d8fa, #a6ffcb)',
+        recovered: '#48E5C2',
+        death: '#D7263D',
         active: '#FA824C'
       }
     }

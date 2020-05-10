@@ -50,10 +50,16 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   proxy: {
-    '/api': {
+    '/summary': {
       target: 'https://covid19.patria.org.ve/api/v1/summary',
       pathRewrite: {
-        '^/api': '/'
+        '^/summary': '/'
+      }
+    },
+    '/timeline': {
+      target: 'https://covid19.patria.org.ve/api/v1/timeline',
+      pathRewrite: {
+        '^/timeline': '/'
       }
     }
   },

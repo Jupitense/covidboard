@@ -2,24 +2,28 @@ export default {
   state() {
     return {
       isLoading: true,
-      data: ''
+      summary: '',
+      timeline: ''
     }
   },
   mutations: {
-    saveAllData(state, data) {
-      state.data = data
+    saveSummary(state, data) {
+      state.summary = data
+    },
+    saveTimeline(state, data) {
+      state.timeline = data
     },
     startApp(state) {
       state.isLoading = false
-    },
-    setCasesByState(state, data) {
-      state.casesByState = data
     }
   },
   actions: {
     async getAllData({ commit }) {
-      await this.$axios.$get('/api', { crossdomain: true }).then((result) => {
-        commit('saveAllData', result)
+      await this.$axios.$get('/summary', { crossdomain: true }).then((res) => {
+        commit('saveSummary', res)
+      })
+      await this.$axios.$get('/timeline', { crossdomain: true }).then((res) => {
+        commit('saveTimeline', res)
         commit('startApp')
       })
     }
