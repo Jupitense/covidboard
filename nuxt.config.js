@@ -64,6 +64,7 @@ export default {
     }
   },
   axios: {
+    proxy: true,
     baseURL: 'https://competent-meitner-b7232a.netlify.app'
   },
   /*
