@@ -63,9 +63,7 @@ export default {
       }
     }
   },
-  axios: {
-    proxy: true
-  },
+  axios: {},
   /*
    ** Build configuration
    */
