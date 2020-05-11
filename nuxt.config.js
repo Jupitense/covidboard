@@ -49,7 +49,7 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  proxy: {
+  /* proxy: {
     '/summary': {
       target: 'https://covid19.patria.org.ve/api/v1/summary',
       pathRewrite: {
@@ -62,10 +62,8 @@ export default {
         '^/timeline': '/'
       }
     }
-  },
-  axios: {
-    proxy: true
-  },
+  }, */
+  axios: {},
   /*
    ** Build configuration
    */
