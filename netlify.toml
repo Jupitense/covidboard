@@ -4,3 +4,8 @@
     to = "https://covid19.patria.org.ve/api/v1/summary"
     status = 200
     force = true
+[[redirects]]
+    from = "/timeline"
+    to = "https://covid19.patria.org.ve/api/v1/timeline"
+    status = 200
+    force = true
