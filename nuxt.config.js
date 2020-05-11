@@ -42,7 +42,7 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
+    // '@nuxtjs/axios',
     '@nuxtjs/proxy'
   ],
   /*
@@ -50,18 +50,8 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   proxy: {
-    'https://competent-meitner-b7232a.netlify.app/summary': {
-      target: 'https://covid19.patria.org.ve/api/v1/summary',
-      pathRewrite: {
-        '^/summary': '/'
-      }
-    },
-    'https://competent-meitner-b7232a.netlify.app/timeline': {
-      target: 'https://covid19.patria.org.ve/api/v1/timeline',
-      pathRewrite: {
-        '^/timeline': '/'
-      }
-    }
+    '/summary': 'https://covid19.patria.org.ve/api/v1/summary',
+    '/timeline': 'https://covid19.patria.org.ve/api/v1/timeline'
   },
   axios: {
     proxy: true
