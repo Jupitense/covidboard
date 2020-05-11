@@ -64,11 +64,7 @@ export default {
     }
   },
   axios: {
-    proxy: true,
-    baseURL:
-      process.env.NODE_ENV !== 'production'
-        ? 'http://localhost:3000'
-        : 'https://competent-meitner-b7232a.netlify.app/'
+    proxy: true
   },
   /*
    ** Build configuration
