@@ -63,7 +63,9 @@ export default {
       }
     }
   },
-  axios: {},
+  axios: {
+    baseURL: 'https://competent-meitner-b7232a.netlify.app'
+  },
   /*
    ** Build configuration
    */
