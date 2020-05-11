@@ -1,0 +1,6 @@
+# API proxying
+[[redirects]]
+    from = "/summary"
+    to = "https://covid19.patria.org.ve/api/v1/summary"
+    status = 200
+    force = true
