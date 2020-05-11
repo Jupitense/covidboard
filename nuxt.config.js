@@ -50,13 +50,13 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   proxy: {
-    '/summary': {
+    'https://competent-meitner-b7232a.netlify.app/summary': {
       target: 'https://covid19.patria.org.ve/api/v1/summary',
       pathRewrite: {
         '^/summary': '/'
       }
     },
-    '/timeline': {
+    'https://competent-meitner-b7232a.netlify.app/timeline': {
       target: 'https://covid19.patria.org.ve/api/v1/timeline',
       pathRewrite: {
         '^/timeline': '/'
