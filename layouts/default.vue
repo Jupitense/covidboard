@@ -42,7 +42,7 @@
             <li
               class="flex flex-col items-center lg:block w-full cursor-pointer pt-4 pb-4 pl-6 pr-6 hover:bg-green-700"
             >
-              <font-awesome-icon icon="globe" class="lg:mr-4" />
+              <font-awesome-icon icon="newspaper" class="lg:mr-4" />
               <span class="invisible md:visible lg:text-sm xl:text-base">
                 Información
               </span>
@@ -74,24 +74,6 @@ import { AtomSpinner } from 'epic-spinners'
 export default {
   components: {
     AtomSpinner
-  },
-  data() {
-    return {
-      menu: [
-        {
-          label: 'Resumen',
-          icon: 'virus',
-          url: '/',
-          target: ''
-        },
-        {
-          label: 'Información',
-          icon: 'newspaper',
-          url: '/informacion',
-          target: ''
-        }
-      ]
-    }
   },
   computed: {
     isLoading() {
