@@ -9,7 +9,7 @@
         <h1
           class="hidden lg:block text-white lg:text-lg font-black text-center p-6 pb-0"
         >
-          COVIDBoard
+          COVID-Venezuela
         </h1>
         <h1
           class="lg:hidden text-white text-2xl font-black text-center p-6 pb-0"
@@ -17,18 +17,26 @@
           CB
         </h1>
         <ul class="flex flex-col mt-12">
-          <a
-            v-for="option in menu"
-            :key="option"
-            :href="option.url"
-            :target="option.target"
-          >
+          <nuxt-link v-for="option in menu" :key="option" :to="option.url">
             <li
               class="flex flex-col items-center lg:block w-full cursor-pointer pt-4 pb-4 pl-6 pr-6 hover:bg-green-700"
             >
               <font-awesome-icon :icon="option.icon" class="lg:mr-4" />
               <span class="invisible md:visible lg:text-sm xl:text-base">
                 {{ option.label }}
+              </span>
+            </li>
+          </nuxt-link>
+          <a
+            href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6"
+            target="blank"
+          >
+            <li
+              class="flex flex-col items-center lg:block w-full cursor-pointer pt-4 pb-4 pl-6 pr-6 hover:bg-green-700"
+            >
+              <font-awesome-icon icon="globe" class="lg:mr-4" />
+              <span class="invisible md:visible lg:text-sm xl:text-base">
+                Global
               </span>
             </li>
           </a>
@@ -56,17 +64,10 @@ export default {
           target: ''
         },
         {
-          label: 'Noticias',
+          label: 'Información',
           icon: 'newspaper',
-          url: '#',
+          url: '/info',
           target: ''
-        },
-        {
-          label: 'Global',
-          icon: 'globe',
-          url:
-            'https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6',
-          target: 'blank'
         }
       ]
     }
