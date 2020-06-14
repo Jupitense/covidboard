@@ -1,5 +1,23 @@
 <template>
   <div>
+    <div class="w-full bg-green-100 text-green-700 text-center">
+      Covidboard es un proyecto Open Source dessarrollado por
+      <a
+        href="https://github.com/olimpoo/"
+        target="blank"
+        class="underline font-bold"
+      >
+        Olimpoo
+      </a>
+      usando los
+      <a
+        href="https://covid19.patria.org.ve/"
+        target="blank"
+        class="underline font-bold"
+      >
+        datos oficiales del país
+      </a>
+    </div>
     <div v-if="isLoading" class="load-view">
       <atom-spinner :animation-duration="1000" :size="100" color="#8fc93aff" />
       <span>Cargando datos...</span>
@@ -17,16 +35,19 @@
           CB
         </h1>
         <ul class="flex flex-col mt-12">
-          <nuxt-link v-for="option in menu" :key="option" :to="option.url">
+          <a
+            href="https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019/advice-for-public/q-a-coronaviruses"
+            target="blank"
+          >
             <li
               class="flex flex-col items-center lg:block w-full cursor-pointer pt-4 pb-4 pl-6 pr-6 hover:bg-green-700"
             >
-              <font-awesome-icon :icon="option.icon" class="lg:mr-4" />
+              <font-awesome-icon icon="newspaper" class="lg:mr-4" />
               <span class="invisible md:visible lg:text-sm xl:text-base">
-                {{ option.label }}
+                Información
               </span>
             </li>
-          </nuxt-link>
+          </a>
           <a
             href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6"
             target="blank"
@@ -53,24 +74,6 @@ import { AtomSpinner } from 'epic-spinners'
 export default {
   components: {
     AtomSpinner
-  },
-  data() {
-    return {
-      menu: [
-        {
-          label: 'Resumen',
-          icon: 'virus',
-          url: '/',
-          target: ''
-        },
-        {
-          label: 'Información',
-          icon: 'newspaper',
-          url: '/info',
-          target: ''
-        }
-      ]
-    }
   },
   computed: {
     isLoading() {

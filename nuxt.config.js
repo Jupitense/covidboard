@@ -4,7 +4,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'COVID19 - Venezuela' || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -42,28 +42,20 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    '@nuxtjs/proxy'
+    '@nuxtjs/axios'
+    // '@nuxtjs/proxy'
   ],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  /* proxy: {
-    '/summary': {
-      target: 'https://covid19.patria.org.ve/api/v1/summary',
-      pathRewrite: {
-        '^/summary': '/'
-      }
-    },
-    '/timeline': {
-      target: 'https://covid19.patria.org.ve/api/v1/timeline',
-      pathRewrite: {
-        '^/timeline': '/'
-      }
-    }
-  }, */
-  axios: {},
+  proxy: {
+    '/summary': 'https://covid19.patria.org.ve/api/v1/summary',
+    '/timeline': 'https://covid19.patria.org.ve/api/v1/timeline'
+  },
+  axios: {
+    proxy: true
+  },
   /*
    ** Build configuration
    */
