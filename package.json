@@ -1,7 +1,7 @@
 {
   "name": "covid19",
   "version": "1.0.0",
-  "description": "A tracker for COVID19 in Venezuela",
+  "description": "Resumen de la pandemia en Venezuela",
   "author": "jupitense",
   "private": true,
   "scripts": {
@@ -22,6 +22,7 @@
     "fs": "0.0.1-security",
     "moment": "^2.25.1",
     "nuxt": "^2.0.0",
+    "nuxt-seo": "^1.3.1",
     "tls": "0.0.1",
     "vue-chartjs": "^3.5.0",
     "vue-choropleth": "^0.3.1",
