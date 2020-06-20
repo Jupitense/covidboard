@@ -13,7 +13,7 @@ export default {
         name: 'description',
         content: process.env.npm_package_description || ''
       },
-      { hid: 'og:image', name: 'og:image', href: '/share.png' }
+      { hid: 'og:image', name: 'og:image', content: '/static/share.png' }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
