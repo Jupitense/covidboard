@@ -82,6 +82,17 @@ export default {
   },
   async beforeCreate() {
     await this.$store.dispatch('appController/getAllData')
+  },
+  head() {
+    return {
+      meta: [
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: '/share.png'
+        }
+      ]
+    }
   }
 }
 </script>
