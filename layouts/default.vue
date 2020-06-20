@@ -91,6 +91,13 @@ export default {
           property: 'og:image',
           content: '/share.png'
         }
+      ],
+      script: [
+        {
+          src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+          'data-ad-client': 'ca-pub-4812198063433866',
+          async: true
+        }
       ]
     }
   }
